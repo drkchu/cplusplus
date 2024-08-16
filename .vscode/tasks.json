@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++11",                        // Use the C++11 standard. Change this to c++14, c++17, or c++20 as needed.
+                "-g",                                // Generate debugging information.
+                "${workspaceFolder}/*.cpp",          // Compile all .cpp files in the workspace folder.
+                "-o",                                // Specify the output file.
+                "${workspaceFolder}/output.exe"      // Name the executable output.
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true                    // Set this task as the default build task.
+            },
+            "problemMatcher": ["$gcc"],              // Use the GCC problem matcher for error reporting.
+            "detail": "Compiling all C++ files in the workspace folder into an executable."
+        }
+    ]
+}
